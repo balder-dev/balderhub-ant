@@ -3,6 +3,10 @@
 This is a BalderHub package for the [Balder](https://docs.balder.dev) test framework. If you are new to Balder check out the
 [official documentation](https://docs.balder.dev) first.
 
+.. note::
+    This package is for development only. This is not a substitute for the official specification and it isn't intended
+    to use this package as reference. Have a look at the thisisant.com documentation for more details.
+
 ## Installation
 
 You can install the latest release with pip:

@@ -1,6 +1,7 @@
-# TODO add classes / functions from module (if any)
-# TODO delete module if it has no sub elements
+from .openant_manager_feature import OpenantManagerFeature
+from .openant_plus_controller_hrm_feature import OpenantPlusControllerHrmFeature
 
 __all__ = [
-
+    'OpenantManagerFeature',
+    'OpenantPlusControllerHrmFeature'
 ]
