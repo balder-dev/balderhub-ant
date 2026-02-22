@@ -7,6 +7,10 @@ This is a BalderHub project for testing the ANT / ANT+ protocol. This module is 
    Please note, this package is still under development. If you would like to contribute, take a look into the
    `project <https://github.com/balder-dev/balderhub-ant/>`_.
 
+.. note::
+    This package is for development only. This is not a substitute for the official specification and it isn't intended
+    to use this package as reference. Have a look at the thisisant.com documentation for more details.
+
 This is a BalderHub package for the `Balder <https://docs.balder.dev/>`_ test framework. If you are new to Balder check
 out the `official documentation <https://docs.balder.dev>`_ first.
 

@@ -8,20 +8,48 @@ This section describes all features that are shipped with this package.
 Scenario Features
 =================
 
-.. note::
-    This package does not provide any scenario features
+Base Classes
+------------
 
-.. todo add your features with .. autoclass
-    .. autoclass:: balderhub.ant.lib.scenario_features.MyScenarioFeature
-        :members:
+.. autoclass:: balderhub.ant.lib.scenario_features.AntplusDeviceConfig
+    :members:
 
+.. autoclass:: balderhub.ant.lib.scenario_features.BaseAntplusDeviceProfile
+    :members:
+
+.. autoclass:: balderhub.ant.lib.scenario_features.AntplusTestCriteriaConfig
+    :members:
+
+
+General Ant+ Manager/Controller
+-------------------------------
+
+.. autoclass:: balderhub.ant.lib.scenario_features.AntNodeManagerFeature
+    :members:
+
+.. autoclass:: balderhub.ant.lib.scenario_features.AntplusControllerFeature
+    :members:
+
+Specific ANT+ Profile: Heart-Rate-Monitor (HRM)
+-----------------------------------------------
+
+.. autoclass:: balderhub.ant.lib.scenario_features.AntplusControllerHrmFeature
+    :members:
+
+.. autoclass:: balderhub.ant.lib.scenario_features.AntplusHrmDeviceConfig
+    :members:
+
+.. autoclass:: balderhub.ant.lib.scenario_features.AntplusHrmTestCriteriaConfig
+    :members:
+
+.. autoclass:: balderhub.ant.lib.scenario_features.HeartRateMonitorDeviceProfile
+    :members:
 
 Setup Features
 ==============
 
-.. note::
-    This package does not provide any setup features.
+.. autoclass:: balderhub.ant.lib.setup_features.OpenantManagerFeature
+    :members:
 
-.. todo add your features with .. autoclass
-    .. autoclass:: balderhub.ant.lib.setup_features.MySetupFeature
-        :members:
+.. autoclass:: balderhub.ant.lib.setup_features.OpenantPlusControllerHrmFeature
+    :members:

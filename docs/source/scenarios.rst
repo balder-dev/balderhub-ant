@@ -9,6 +9,20 @@ scenarios that are implemented in this BalderHub package.
     This BalderHub project doesn't have any scenarios.
 
 
-.. todo add your scenarios with .. autoclass
-    .. autoclass:: balderhub.ant.scenarios.ScenarioMyTest
-        :members:
+Heart-Rate-Monitor Profile Scenarios
+====================================
+
+.. autoclass:: balderhub.ant.scenarios.hrm.BaseHrmScenario
+    :members:
+
+.. autoclass:: balderhub.ant.scenarios.hrm.ScenarioHrmBatteryMeasuring
+    :members:
+
+.. autoclass:: balderhub.ant.scenarios.hrm.ScenarioHrmDeviceProfileFullTransmissionPattern
+    :members:
+
+.. autoclass:: balderhub.ant.scenarios.hrm.ScenarioManualRequestForAck
+    :members:
+
+.. autoclass:: balderhub.ant.scenarios.hrm.ScenarioHrmManualRequestForBrdcst
+    :members:
