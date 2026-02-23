@@ -24,3 +24,4 @@ out the `official documentation <https://docs.balder.dev>`_ first.
    features.rst
    examples.rst
    utilities.rst
+   contrib.rst
