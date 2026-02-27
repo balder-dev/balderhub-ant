@@ -1,7 +1,6 @@
 from __future__ import annotations
 import logging
 
-import time
 from typing import Union, OrderedDict, Callable
 
 try:
@@ -140,19 +139,6 @@ class AntplusControllerHrmFeature(AntplusControllerFeature):
                                  f'continues-sequence-counts: {relevant_continues_sequence_counts}')
 
         return list(relevant_continues_sequence_counts.keys())
-
-    def wait_for_new_broadcast_message(
-            self,
-            of_page_type: type[HrmPagesType] = None,
-            timeout: float = 10
-    ) -> HrmPagesType:
-        start_time = time.perf_counter()
-        while (time.perf_counter() - start_time) < timeout:
-            messages = self.received_broadcast_messages.filter_by_type(page_type=of_page_type)
-            if len(messages) > 0:
-                return messages[0]
-            time.sleep(0.1)
-        raise TimeoutError(f'not received any messages within {timeout} seconds')
 
     # =============================================== VALIDATION METHODS ===============================================
 
