@@ -9,4 +9,4 @@ typing_extensions>=4.0.0
 openant==1.3.4
 balderhub-unit
 balderhub-battery
-balderhub-heart
+balderhub-heart==0.0.2a0
