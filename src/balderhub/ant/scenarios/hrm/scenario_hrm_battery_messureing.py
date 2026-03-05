@@ -8,7 +8,7 @@ from balderhub.battery.lib.scenario_features import BatteryTestCriteriaConfig
 
 from balderhub.ant.scenarios.hrm.base_hrm_scenario import BaseHrmScenario
 
-from balderhub.ant.lib.utils import pages
+from balderhub.ant.lib.utils import pages, PageMessageCollection
 from balderhub.heart.lib.scenario_features import HeartBeatFeature, StrapDockingFeature
 
 
@@ -73,7 +73,6 @@ class ScenarioHrmBatteryMeasuring(BaseHrmScenario):
                               :meth:`BatteryTestCriteriaConfig.validation_with_battery_levels`)
         """
         self.BatterySimulator.sim.set_to(battery_level)
-        expected_voltage = self.BatterySimulator.sim.discharge_characteristic.get_voltage_for(battery_level)
         try:
             self.BatterySimulator.sim.insert_battery()
             try:
@@ -81,9 +80,18 @@ class ScenarioHrmBatteryMeasuring(BaseHrmScenario):
                 data = self.HeartRateHost.controller.wait_for_new_broadcast_message(
                     pages.hrm.Hrm7BatteryStatusPage, timeout=300
                 )
-                # todo add allowed deviation
-                assert data.total_battery_voltage == 3.1, \
-                    f"detect unexpected battery voltage {data.total_battery_voltage}V (expected {expected_voltage}V)"
+                expected_bat_voltage = \
+                    self.BatterySimulator.sim.discharge_characteristic.get_voltage_for(battery_level) \
+                        if self.HeartRateSensor.ant_config.support_battery_voltage_messuring else None
+
+                pages.hrm.Hrm7BatteryStatusPage.validate_messages(
+                    of_msg_collection=PageMessageCollection([data]),
+                    expected_battery_level=int(battery_level * 100),
+                    expected_battery_status=self.HeartRateSensor.ant_config.get_expected_battery_state_for_level(
+                        int(battery_level * 100)
+                    ),
+                    expected_battery_voltage=expected_bat_voltage,
+                )
             finally:
                 self.HeartRateHost.controller.close_channel()
         finally:
